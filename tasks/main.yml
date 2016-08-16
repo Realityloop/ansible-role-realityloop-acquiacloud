@@ -17,3 +17,7 @@
 - name: Update Acquia cloud drush aliases.
   shell: drush acquia-update
   when: acapi_email and acapi_key
+
+# Download database if configured.
+- include: database-download.yml
+  when: acapi_alias and acapi_db_name
